@@ -1,0 +1,11 @@
+﻿<h1>
+  {{title}}
+ 
+ 
+</h1>
+<div *ngIf="people">
+  {{people.name}}
+</div>
+<div *ngIf="people; else elseBlock">{{people.id}}</div>
+<ng-template #elseBlock>..loading</ng-template>
+<input  type="button" (click)="showMessage()" value="Show mesasge" />
