@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace WebApplication1.Controllers
+namespace BiGitServer.Web.Controllers
 {
     public class HomeController : Controller
     {
@@ -13,7 +13,9 @@ namespace WebApplication1.Controllers
         {
             if (Request.Url.Host == "localhost")
             {
-                return Redirect("/dist/index.html");
+                //return View("/dist/index.html");
+                var result = new FilePathResult("~/dist/index.html", "text/html");
+                return Redirect("index.html");
             }
             return View();
         }

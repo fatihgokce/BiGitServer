@@ -1,11 +1,22 @@
-﻿<h1>
-  {{title}}
- 
- 
-</h1>
-<div *ngIf="people">
-  {{people.name}}
-</div>
+
+<!-- main app container -->
 <div *ngIf="people; else elseBlock">{{people.id}}</div>
 <ng-template #elseBlock>..loading</ng-template>
 <input  type="button" (click)="showMessage()" value="Show mesasge" />
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="col-sm-8 col-sm-offset-2">
+           
+            <alert></alert>
+              <a routerLink="" routerLinkActive="active">User List</a>
+              <a routerLink="/post/1" routerLinkActive="active">Post1</a>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+<!-- credits -->
+<div class="text-center">
+
+</div>
