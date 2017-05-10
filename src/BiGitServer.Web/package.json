@@ -2,7 +2,6 @@
   "name": "angular4",
   "version": "0.0.0",
   "license": "MIT",
-
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.config.json --port 4201",
@@ -21,6 +20,7 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.25",
     "core-js": "^2.4.1",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
@@ -39,7 +39,6 @@
     "json-loader": "^0.5.3",
     "null-loader": "0.1.1",
     "postcss-loader": "^1.1.0",
-  
     "raw-loader": "0.5.1",
     "remap-istanbul": "^0.6.4",
     "rimraf": "^2.5.1",
@@ -47,10 +46,8 @@
     "shelljs": "^0.7.0",
     "style-loader": "^0.13.0",
     "ts-helpers": "^1.1.1",
-   
     "tslint-loader": "^3.3.0",
     "url-loader": "^0.5.6",
-
     "@angular/cli": "1.0.0",
     "@angular/compiler-cli": "^4.0.0",
     "@types/jasmine": "2.5.38",

@@ -1,16 +1,14 @@
 
 <!-- main app container -->
-<div *ngIf="people; else elseBlock">{{people.id}}</div>
-<ng-template #elseBlock>..loading</ng-template>
-<input  type="button" (click)="showMessage()" value="Show mesasge" />
-
+<top-nav></top-nav> 
 <div class="jumbotron">
     <div class="container">
         <div class="col-sm-8 col-sm-offset-2">
            
             <alert></alert>
+            {{isLogged | json}}
               <a routerLink="" routerLinkActive="active">User List</a>
-              <a routerLink="/post/1" routerLinkActive="active">Post1</a>
+              <a routerLink="/post/1">Post1</a>
             <router-outlet></router-outlet>
         </div>
     </div>

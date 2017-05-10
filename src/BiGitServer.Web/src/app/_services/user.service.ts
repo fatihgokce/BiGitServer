@@ -1,14 +1,25 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions, Response } from '@angular/http';
+import { Http, Headers, RequestOptions, Response,URLSearchParams } from '@angular/http';
 
 import { User } from '../_models/index';
-
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
 @Injectable()
 export class UserService {
     constructor(private http: Http) { }
 
-    getAll() {
-        return this.http.get('/api/values', this.jwt()).map((response: Response) => response.json());
+    getAll():Observable<User[]> {
+        let params: URLSearchParams = new URLSearchParams();
+        params.set('name', "fatih");    
+        let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        let headers = new Headers({ 'Authorization': 'Bearer ' + currentUser.token });
+        let ro = new RequestOptions({headers:headers});
+        //requestOptions.search = params;
+        ro.search=params;
+        ro.headers=headers;
+        console.log(ro.headers);
+        return this.http.get('/api/values/',ro ).map((res:Response) => res.json());
     }
 
     getById(id: number) {
