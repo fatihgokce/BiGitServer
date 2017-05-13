@@ -5,8 +5,7 @@ import {AuthenticationService}from'../_services/authentication.service';
     moduleId: module.id,
     selector: 'top-nav',
     templateUrl: './top-nav.component.html',
-    //styleUrls: ['./app.component.css'],
-    styles:['']
+    styleUrls: ['top-nav.component.css']
 })
 export class TopNavComponent implements OnInit {
     isAuthrized:boolean=true;

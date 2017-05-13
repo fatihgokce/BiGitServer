@@ -5,15 +5,16 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-
+using BiGitServer.Data.Models;
 namespace BiGitServer.Web.api
 {
-    public class ValuesController : ApiController
+    public class ValuesController : BaseApi
     {
         // GET api/<controller>
         [JwtAuthentication]
         public List<UserModel> Get()
         {
+            BiGitServer.Data.Models.User user = Session.QueryOver<User>().SingleOrDefault();
             return new List<UserModel>
             {
                 new UserModel{id=2,firstName="bir",lastName="bir s",username="gttr"},

@@ -28,22 +28,22 @@ namespace BiGitServer.Web.Controllers
                 //}
                 //return View("/dist/index.html");
                 //var result = new FilePathResult("~/dist/index.html", "text/html");
-                using(ISession session = NHibernateHelper.NSession)
-                {
-                    using (var transaction = session.BeginTransaction())
-                    {
-                        BiGitServer.Data.Models.User user = new Data.Models.User();
-                        user.Id = Guid.NewGuid();
-                        user.Username = "fatih";
-                        user.Email = "fddf";
-                        user.Surname = "dsdc";
-                        user.Password = "cdscs";
-                        user.Name = "cdscsd";
-                        session.Save(user);
-                        transaction.Commit();
-                    }
+                //using(ISession session = NHibernateHelper.NSession)
+                //{
+                //    using (var transaction = session.BeginTransaction())
+                //    {
+                //        BiGitServer.Data.Models.User user = new Data.Models.User();
+                //        user.Id = Guid.NewGuid();
+                //        user.Username = "fatih";
+                //        user.Email = "fddf";
+                //        user.Surname = "dsdc";
+                //        user.Password = "cdscs";
+                //        user.Name = "cdscsd";
+                //        session.Save(user);
+                //        transaction.Commit();
+                //    }
                  
-                }
+                //}
                 return View();
             }
          

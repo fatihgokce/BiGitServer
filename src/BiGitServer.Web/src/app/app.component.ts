@@ -5,7 +5,8 @@ import 'rxjs/add/operator/map';
 @Component({
     moduleId: module.id,
     selector: 'app-root',
-    templateUrl: 'app.component.html'
+    templateUrl: 'app.component.html',
+    styleUrls:['app.component.css']
 })
 
 export class AppComponent implements OnInit {
@@ -19,6 +20,9 @@ export class AppComponent implements OnInit {
         console.log("AppComponent Constructor");
     }
     ngOnInit() {
+      
+    }
+    private getFakeData(){
         // let headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
         // let options = new RequestOptions({ headers: headers, withCredentials: true});
   

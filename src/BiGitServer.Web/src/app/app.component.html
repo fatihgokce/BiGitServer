@@ -1,6 +1,6 @@
 
 <!-- main app container -->
-<top-nav></top-nav> 
+<!--<top-nav></top-nav> 
 <div class="jumbotron">
     <div class="container">
         <div class="col-sm-8 col-sm-offset-2">
@@ -12,9 +12,42 @@
             <router-outlet></router-outlet>
         </div>
     </div>
+</div>-->
+<top-nav></top-nav> 
+<div ng-spinner-bar="" class="page-spinner-bar hide">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+</div>
+<!--<div class="container-fluid">
+    <alert></alert>
+    {{isLogged | json}}
+    <a routerLink="" routerLinkActive="active">User List</a>
+    <a routerLink="/post/1">Post1</a>
+    <router-outlet></router-outlet>
+</div>-->
+
+<div class="clearfix"> </div>
+<div class="page-content">
+  <div class="page-content">
+        <div class="container">
+            <!-- BEGIN ACTUAL CONTENT -->
+            <div ui-view class="fade-in-up">
+                <alert></alert>
+                {{isLogged | json}}
+                <ul class="fa-ul">
+  <li><i class="fa-li fa fa-check-square"></i>List icons</li>
+  <li><i class="fa-li fa fa-check-square"></i>can be used</li>
+  <li><i class="fa-li fa fa-spinner fa-spin"></i>as bullets</li>
+  <li><i class="fa-li fa fa-square"></i>in lists</li>
+</ul>
+                <a routerLink="" routerLinkActive="active">User List</a>
+                <a routerLink="/post/1">Post1</a>
+                <router-outlet></router-outlet>
+
+            </div>
+            <!-- END ACTUAL CONTENT -->
+        </div>
+    </div>
 </div>
 
-<!-- credits -->
-<div class="text-center">
-
-</div>
