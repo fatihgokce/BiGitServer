@@ -8,10 +8,10 @@ import {AuthenticationService}from'../_services/authentication.service';
     styleUrls: ['top-nav.component.css']
 })
 export class TopNavComponent implements OnInit {
-    isAuthrized:boolean=true;
-    constructor(private route:Router,private auth:AuthenticationService ) {     
+    isAuthrized:boolean=true; 
+    constructor(private router: Router,private auth:AuthenticationService ) {
+      
     }
-
     ngOnInit() { 
         this.isLoggedIn();
     }
@@ -28,5 +28,6 @@ export class TopNavComponent implements OnInit {
             console.log("false");
             this.isAuthrized=false;
         }
-    }
+    } 
+    
 }
