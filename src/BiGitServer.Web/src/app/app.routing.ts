@@ -8,9 +8,8 @@ import {UserListComponent} from './user/user-list.component';
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
-    { path: 'register', component: RegisterComponent },
-    {path:"userlist",component:UserListComponent},
-    // otherwise redirect to home
+    { path: 'register', component: RegisterComponent },  
+    //{ path: 'users', component: UserListComponent,canActivate: [AuthGuard] },
     { path: '**', redirectTo: '' }
 ];
 

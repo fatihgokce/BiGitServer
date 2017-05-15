@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
                         this.returnUrl="/";
                     }
 
-                    this.router.navigate(["/userlist"]);
+                    this.router.navigate([this.returnUrl]);
                 },
                 error => {
                     this.alertService.error(error);

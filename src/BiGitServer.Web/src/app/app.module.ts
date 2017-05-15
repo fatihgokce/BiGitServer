@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {UserModule} from './user/user.module';
 import { AppComponent } from './app.component';
 
 import { AlertComponent } from './_directives/index';
@@ -12,7 +13,7 @@ import { AlertService, AuthenticationService, UserService } from './_services/in
 import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/login.component';
 import {RegisterComponent} from './register/register.component';
-import {UserListComponent} from './user/user-list.component';
+
 import {TopNavComponent} from './_shared/top-nav.component';
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers/index';
@@ -31,14 +32,15 @@ import {routing} from './app.routing';
     AppComponent,AlertComponent,
         HomeComponent,
         LoginComponent,
-        RegisterComponent,TopNavComponent,UserListComponent
+        RegisterComponent,TopNavComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     routing,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    UserModule
    // RouterModule.forRoot(userRoutes)
   ],
   //exports:[Comp1],

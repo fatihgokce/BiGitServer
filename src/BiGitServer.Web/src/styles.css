@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-body {
-  
+body,html {
+   height:100%;
     background-color: #fff;
     color: #333;  
     font-size: 14px;
@@ -18,24 +18,35 @@ a {
     text-shadow: none;
     color: #337ab7;
 }
-/*.badge, .input-inline {
-    vertical-align: middle;
+.btn, .form-control {
+    box-shadow: none!important;
 }
-.badge-danger, .badge-default, .badge-info, .badge-primary, .badge-success, .badge-warning, .btn.white:not(.btn-outline).active, .btn.white:not(.btn-outline):active, .open>.btn.white:not(.btn-outline).dropdown-toggle {
-    background-image: none;
+.btn {
+    outline: 0!important;
 }
-.badge-default, .label-default {
-    background-color: #bac3d0;
+.btn:not(.btn-sm):not(.btn-lg) {
+    line-height: 1.44;
 }
-.badge {
-    font-size: 11px!important;
-    font-weight: 300;
-    height: 18px;
+.btn.green:not(.btn-outline) {
+    color: #FFF;
+    background-color: #32c5d2;
+    border-color: #32c5d2;
+}
+.btn.red:not(.btn-outline) {
     color: #fff;
-    padding: 3px 6px;
-    -webkit-border-radius: 12px!important;
-    -moz-border-radius: 12px!important;
-    border-radius: 12px!important;
-    text-shadow: none!important;
-    text-align: center;
-}*/
+    background-color: #e7505a;
+    border-color: #e7505a;
+}
+a, button, code, div, img, input, label, li, p, pre, select, span, svg, table, td, textarea, th, ul {
+    -webkit-border-radius: 0!important;
+    -moz-border-radius: 0!important;
+    border-radius: 0!important;
+}
+.box-btns{background-color:#e7ecf1;position:relative}
+.help-block{color:red;}
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}

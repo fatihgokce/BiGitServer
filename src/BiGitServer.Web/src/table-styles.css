@@ -1,0 +1,21 @@
+.table-scrollable {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border: 1px solid #e7ecf1;
+    margin: 10px 0!important;
+}
+.table-scrollable>.table-bordered {
+    border: 0;
+}
+.table-scrollable>.table {
+    width: 100%!important;
+    margin: 0!important;
+    background-color: #fff;
+}
+.table td, .table th {
+    font-size: 14px;
+}
+.table-scrollable>.table-bordered>tbody>tr>td:first-child, .table-scrollable>.table-bordered>tbody>tr>th:first-child, .table-scrollable>.table-bordered>tfoot>tr>td:first-child, .table-scrollable>.table-bordered>tfoot>tr>th:first-child, .table-scrollable>.table-bordered>thead>tr>td:first-child, .table-scrollable>.table-bordered>thead>tr>th:first-child {
+    border-left: 0;
+}

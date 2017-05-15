@@ -11,6 +11,7 @@
     </nav>
   </div>
 </div>-->
+<p style="color:brown;font-size:12px">Autrized:{{isAuthrized}}</p>
 <div class="page-header" *ngIf="isAuthrized">
   <div class="container">
     <nav class="navbar navbar-toggleable-md ">
@@ -28,7 +29,7 @@ true}">
           </li>
           <li class="nav-item"  routerLinkActive="active" [routerLinkActiveOptions]="{exact:
 true}">
-            <a class="nav-link" [routerLink]="['/userlist']">Users</a>
+            <a class="nav-link" [routerLink]="['/users']">Users</a>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" href="#">Disabled</a>
