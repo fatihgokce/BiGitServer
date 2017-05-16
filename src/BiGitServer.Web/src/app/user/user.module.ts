@@ -7,6 +7,7 @@ import {UserListComponent} from './user-list.component';
 import {UserCreateComponent} from './user-create.compontent';
 import {UserService} from '../_services/user.service';
 import { RouterModule, Routes } from '@angular/router';
+import {SharedModule} from '../_shared/shared.module';
 export const userRoutes: Routes = [
   { path: 'users', component: UserListComponent,canActivate: [AuthGuard]  },
   { path:'create-user',component:UserCreateComponent}
@@ -14,7 +15,7 @@ export const userRoutes: Routes = [
 
 @NgModule({
     declarations: [UserListComponent,UserCreateComponent],
-    imports: [CommonModule,FormsModule,RouterModule.forChild(userRoutes) ],
+    imports: [CommonModule,FormsModule,SharedModule,RouterModule.forChild(userRoutes) ],
     //exports: [BrowserModule],//if open get  Maximum call stack size exceeded
     providers: [UserService]
 })

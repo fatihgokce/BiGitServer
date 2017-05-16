@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {UserModule} from './user/user.module';
+import {SharedModule} from './_shared/shared.module';
 import { AppComponent } from './app.component';
 
 import { AlertComponent } from './_directives/index';
@@ -40,10 +41,10 @@ import {routing} from './app.routing';
     HttpModule,
     routing,
     NgbModule.forRoot(),
-    UserModule
+    UserModule,SharedModule
    // RouterModule.forRoot(userRoutes)
   ],
-  //exports:[Comp1],
+  //exports:[SharedModule],
   providers: [
         AuthGuard,
         AlertService,

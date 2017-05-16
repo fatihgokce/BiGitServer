@@ -1,15 +1,14 @@
 <div class="col-md-6 col-md-offset-3">
-
-    <h1>Create User</h1>
-    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+  
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" class="form-control" required [(ngModel)]="model.name" name="name" #name="ngModel">
+            <input type="text"  class="form-control"   required [(ngModel)]="model.name" name="name" #name="ngModel">
             <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
                 Name is required
-            </div>
+            </div>            
         </div>
-        <div class="form-group">
+        <div class="form-group">          
             <label for="surname">Surname</label>
             <input type="text" class="form-control" id="surname" required [(ngModel)]="model.surname" name="surname" #surname="ngModel">
             <div [hidden]="surname.valid || surname.pristine" class="alert alert-danger">
@@ -18,27 +17,30 @@
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="text" class="form-control" id="email" required [email]="true" [(ngModel)]="model.email" name="email" #email="ngModel">
-            <div [hidden]="email.valid || email.pristine" class="alert alert-danger" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
-                Email is required
+            <input type="text" class="form-control" id="email" validateExistColumn="email"  required [email]="true" [(ngModel)]="model.email" name="email" #email="ngModel" >
+            <div [hidden]="email.valid || email.pristine" class="alert alert-danger" >
+               <div *ngIf="email.errors!==null && email.errors.taken; else elseBlock2">Email already exists!!!</div>
+                <ng-template #elseBlock2> Email is required</ng-template>
             </div>
         </div>
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" class="form-control" id="username" required [(ngModel)]="model.username" name="username" #username="ngModel">
-            <div [hidden]="username.valid || username.pristine" class="alert alert-danger">
-                Username is required
+            <input type="text" class="form-control" id="username" validateExistColumn="username"  required [(ngModel)]="model.username" name="username" #username="ngModel">
+            <div [hidden]="username.valid || username.pristine" class="alert alert-danger">            
+                 <div *ngIf="username.errors!==null && username.errors.taken; else elseBlock">Username already exists!!!</div>
+                  <ng-template #elseBlock> Username is required</ng-template>
             </div>
+          
         </div>
-        <div class="form-group">
+        <div class="form-group">             
             <label for="password">Password</label>
             <input type="password" class="form-control" id="password" required [(ngModel)]="model.password" name="password" #password="ngModel">
-            <div [hidden]="username.valid || username.pristine" class="alert alert-danger">
+            <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
                 Password is required
             </div>
         </div>
-
-        <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+      
+        <button type="submit" class="btn btn-success" [disabled]="!userForm.form.valid">Submit</button>
     </form>
 
 </div>

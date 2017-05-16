@@ -21,7 +21,20 @@ export class UserService {
         console.log(ro.headers);
         return this.http.get('/api/values/',ro ).map((res:Response) => res.json());
     }
-
+    controlExistUser(columnName:string,value:string):Observable<boolean>{
+      
+        let params: URLSearchParams = new URLSearchParams();
+        params.set('columnName', columnName);    
+        params.set('value', value);    
+        let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        let headers = new Headers({ 'Authorization': 'Bearer ' + currentUser.token });
+        let ro = new RequestOptions({headers:headers});
+        //requestOptions.search = params;
+        ro.search=params;
+        ro.headers=headers;
+        console.log(ro.headers);
+        return this.http.get('/api/user/ExistUser',ro ).map((res:Response) => res.json());
+    }
     getById(id: number) {
         return this.http.get('/api/users/' + id, this.jwt()).map((response: Response) => response.json());
     }

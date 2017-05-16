@@ -123,6 +123,7 @@
   <ItemGroup>
     <Compile Include="api\BaseApi.cs" />
     <Compile Include="api\TokenController.cs" />
+    <Compile Include="api\UserController.cs" />
     <Compile Include="api\ValuesController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
