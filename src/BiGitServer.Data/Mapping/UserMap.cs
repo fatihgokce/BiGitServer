@@ -12,11 +12,10 @@ namespace BiGitServer.Data.Mapping
         {
             Id(x => x.Id).GeneratedBy.Guid();
             Table("User");
-            Map(x => x.Name);
-            Map(t => t.Surname);
-            Map(t => t.Username);
-            Map(t => t.Password);           
-            Map(t => t.Email);
+            Map(x => x.Name).Not.Nullable().Length(255);
+            Map(t => t.Surname).Not.Nullable().Length(255);
+            Map(t => t.Password).Not.Nullable().Length(255);
+            Map(t => t.Email).Not.Nullable().Length(255);
         }
     
     }

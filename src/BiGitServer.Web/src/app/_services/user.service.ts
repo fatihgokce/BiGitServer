@@ -8,18 +8,16 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class UserService {
     constructor(private http: Http) { }
-
-    getAll():Observable<User[]> {
-        let params: URLSearchParams = new URLSearchParams();
-        params.set('name', "fatih");    
+    private getRequestOpt():RequestOptions{
         let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        let headers = new Headers({ 'Authorization': 'Bearer ' + currentUser.token });
+        let headers = new Headers({ 'Authorization': 'Bearer ' + currentUser.token,'Content-Type': 'application/json' });
         let ro = new RequestOptions({headers:headers});
-        //requestOptions.search = params;
-        ro.search=params;
-        ro.headers=headers;
-        console.log(ro.headers);
-        return this.http.get('/api/values/',ro ).map((res:Response) => res.json());
+        
+        return ro;
+    }
+    getAll():Observable<User[]> {
+        let ro=this.getRequestOpt();
+        return this.http.get('/api/user/',ro ).map((res:Response) => res.json());
     }
     controlExistUser(columnName:string,value:string):Observable<boolean>{
       
@@ -40,7 +38,11 @@ export class UserService {
     }
 
     create(user: User) {
-        return this.http.post('/api/users', user, this.jwt()).map((response: Response) => response.json());
+        // let params: URLSearchParams = new URLSearchParams();
+        // params.set('value', user.username); 
+        let ro=this.getRequestOpt();
+        //ro.params=params;
+        return this.http.post('/api/user', user, ro).map((response: Response) => response.json());
     }
 
     update(user: User) {

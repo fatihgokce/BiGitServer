@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {AlertService,UserService} from '../_services/index';
+import {User} from '../_models/user';
 @Component({
     moduleId:module.id,
     templateUrl: './user-create.component.html',
@@ -9,8 +10,7 @@ import {AlertService,UserService} from '../_services/index';
 })
 export class UserCreateComponent implements OnInit {
     loading: boolean = false;
-    powers = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
-    model: any = {};
+    model: any={};
     submitted = false;
 
     constructor(
@@ -22,7 +22,7 @@ export class UserCreateComponent implements OnInit {
     ngOnInit() {}
     onSubmit() {
         this.submitted = true;
-        console.log("oleyy");
+        console.log(JSON.stringify(this.model));
         this.loading = true;
         this.userService.create(this.model)
             .subscribe(

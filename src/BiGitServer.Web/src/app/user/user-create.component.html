@@ -22,16 +22,7 @@
                <div *ngIf="email.errors!==null && email.errors.taken; else elseBlock2">Email already exists!!!</div>
                 <ng-template #elseBlock2> Email is required</ng-template>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" id="username" validateExistColumn="username"  required [(ngModel)]="model.username" name="username" #username="ngModel">
-            <div [hidden]="username.valid || username.pristine" class="alert alert-danger">            
-                 <div *ngIf="username.errors!==null && username.errors.taken; else elseBlock">Username already exists!!!</div>
-                  <ng-template #elseBlock> Username is required</ng-template>
-            </div>
-          
-        </div>
+        </div>   
         <div class="form-group">             
             <label for="password">Password</label>
             <input type="password" class="form-control" id="password" required [(ngModel)]="model.password" name="password" #password="ngModel">

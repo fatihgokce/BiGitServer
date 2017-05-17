@@ -3,17 +3,17 @@
 </div>
 <table class="table table-striped">
     <thead>
-        <tr>
-            <th>User Name</th>
+        <tr>            
             <th>Name</th>
             <th>Surname</th>
+            <th>Email</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let user of users">
-            <td>{{user.username}}</td>
-            <td>{{user.firstName}}</td>
-            <td>{{user.lastName}}</td>
+        <tr *ngFor="let user of users">            
+            <td>{{user.Name}}</td>
+            <td>{{user.Surname}}</td>
+            <td>{{user.Email}}</td>
         </tr>
     </tbody>
 </table>

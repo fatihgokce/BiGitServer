@@ -38,7 +38,7 @@ namespace BiGitServer.Data
             return Fluently.Configure()
                    .Database(SQLiteConfiguration.Standard.ConnectionString(cs))
 
-                   .Mappings(m => m.FluentMappings.Add(typeof(UserMap)))
+                   .Mappings(m=>m.FluentMappings.AddFromAssembly(Assembly.GetExecutingAssembly()))
                    //.ExposeConfiguration(BuildSchema)
                    
                    .BuildSessionFactory();

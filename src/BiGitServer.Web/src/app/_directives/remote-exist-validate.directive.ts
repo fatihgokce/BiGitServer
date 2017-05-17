@@ -12,7 +12,7 @@ export class RemoteExistValidateDirective implements Validator  {
     constructor(private userService:UserService){}
     @Input('validateExistColumn') columnName: string;
     @HostListener('mouseenter') onMouseEnter() {
-        console.log(this.columnName);
+        //console.log(this.columnName);
     }
     validate(c: AbstractControl)
     //: Promise<{[key : string] : any}>

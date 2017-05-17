@@ -14,18 +14,18 @@ namespace BiGitServer.Web.api
     public class UserController : BaseApi
     {
         // GET api/<controller>
-        public IEnumerable<string> Get()
+        public IEnumerable<User> Get()
         {
-            return new string[] { "value1", "value2" };
+            return Session.QueryOver<User>().List();
         }
         
         [HttpGet]
         [Route("api/user/ExistUser")]
         public bool ExistUser(string columnName,string value)
         {
-            if (columnName == "username")
+            if (columnName == "email")
             {
-                return Session.QueryOver<User>().Where(x => x.Username == value).RowCount() > 0;
+                return Session.QueryOver<User>().Where(x => x.Email == value).RowCount() > 0;
             }
             else
             {
@@ -39,8 +39,10 @@ namespace BiGitServer.Web.api
         }
 
         // POST api/<controller>
-        public void Post([FromBody]string value)
-        {
+        public void Post([FromBody]User value)
+        {         
+            value.Id = Guid.NewGuid();
+            Session.Save(value);           
         }
 
         // PUT api/<controller>/5

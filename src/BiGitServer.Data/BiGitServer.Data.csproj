@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\LibGit2Sharp.NativeBinaries.1.0.164\build\LibGit2Sharp.NativeBinaries.props" Condition="Exists('..\packages\LibGit2Sharp.NativeBinaries.1.0.164\build\LibGit2Sharp.NativeBinaries.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -57,7 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BiGitServerDbContext.cs" />
+    <Compile Include="Mapping\ProjectMap.cs" />
     <Compile Include="Mapping\UserMap.cs" />
+    <Compile Include="Models\Project.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="NHibernateHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,5 +77,6 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.105.0\build\net451\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.105.0\build\net451\System.Data.SQLite.Core.targets'))" />
+    <Error Condition="!Exists('..\packages\LibGit2Sharp.NativeBinaries.1.0.164\build\LibGit2Sharp.NativeBinaries.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\LibGit2Sharp.NativeBinaries.1.0.164\build\LibGit2Sharp.NativeBinaries.props'))" />
   </Target>
 </Project>

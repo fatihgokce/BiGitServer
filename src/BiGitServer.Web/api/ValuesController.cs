@@ -14,7 +14,7 @@ namespace BiGitServer.Web.api
         [JwtAuthentication]
         public List<UserModel> Get()
         {
-            BiGitServer.Data.Models.User user = Session.QueryOver<User>().SingleOrDefault();
+            //BiGitServer.Data.Models.User user = Session.QueryOver<User>().SingleOrDefault();
             return new List<UserModel>
             {
                 new UserModel{id=2,firstName="bir",lastName="bir s",username="gttr"},

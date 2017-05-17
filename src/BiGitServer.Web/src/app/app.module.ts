@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 
 import {TopNavComponent} from './_shared/top-nav.component';
+import {ProjectListComponent,ProjectCreateComponent} from './project/index';
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers/index';
 import { MockBackend, MockConnection } from '@angular/http/testing';
@@ -33,7 +34,8 @@ import {routing} from './app.routing';
     AppComponent,AlertComponent,
         HomeComponent,
         LoginComponent,
-        RegisterComponent,TopNavComponent
+        RegisterComponent,TopNavComponent,
+        ProjectListComponent,ProjectCreateComponent
   ],
   imports: [
     BrowserModule,
