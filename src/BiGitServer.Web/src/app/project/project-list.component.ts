@@ -18,7 +18,7 @@ export class ProjectListComponent implements OnInit {
         this.projectService.getAll().subscribe(data=>{
             this.projects=data;
         },error=>{
-            this.alertService.error(error);
+            this.alertService.error(error._body.indexOf('ValidateToken'));
         });
     }
 }

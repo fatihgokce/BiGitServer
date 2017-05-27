@@ -11,7 +11,7 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },  
     //{ path: 'users', component: UserListComponent,canActivate: [AuthGuard] },
-    {path:'create-project',component:ProjectCreateComponent,canActivate:[AuthGuard]},
+    {path:'create-project',component:ProjectCreateComponent,canActivate:[AuthGuard], data: { title: 'Create project' }},
     { path: '**', redirectTo: '' }
 ];
 

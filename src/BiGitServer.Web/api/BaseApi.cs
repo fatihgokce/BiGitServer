@@ -17,7 +17,7 @@ namespace BiGitServer.Web.api
             {
                 if (session == null)
                 {
-                    session = NHibernateHelper.NSession;
+                    session = DbSession.Instance.GetSession; //NHibernateHelper.NSession;
                     tx = session.BeginTransaction();
                 }
                 return session;

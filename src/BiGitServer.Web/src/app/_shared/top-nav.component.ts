@@ -15,10 +15,13 @@ export class TopNavComponent implements OnInit {
     ngOnInit() { 
         this.isLoggedIn();
     }
+    get isAuth():boolean{
+        return AuthenticationService.userLoggedIn;
+    }
     isLoggedIn():void{
         console.log("top nav isLoggedIn");        
         //return this.auth.getLoginStatus();
-        if (localStorage.getItem('currentUser')) {
+        if (sessionStorage.getItem('currentUser')) {
             // logged in so return true           
             //return true;
             console.log("true");

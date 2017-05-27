@@ -8,9 +8,9 @@ export class AuthGuard implements CanActivate {
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         //console.log(localStorage.getItem('currentUser'));
-        if (localStorage.getItem('currentUser')) {
+        if (sessionStorage.getItem('currentUser')) {
             // logged in so return true
-            //console.log("true");
+            console.log("true");
             return true;
         }
 

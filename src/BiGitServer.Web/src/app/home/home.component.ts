@@ -13,11 +13,11 @@ export class HomeComponent implements OnInit {
     users: User[] = [];
 
     constructor(private userService: UserService) {
-        this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        this.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
     }
 
     ngOnInit() {
-        this.loadAllUsers();
+        //this.loadAllUsers();
     }
 
     deleteUser(id: number) {
@@ -29,6 +29,7 @@ export class HomeComponent implements OnInit {
         .subscribe(data => { this.users = data;console.log(this.users); },
         error=>{
             console.log(error);
+            console.log(JSON.stringify(error.statusText));
         });
     }
 }

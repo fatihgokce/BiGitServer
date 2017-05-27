@@ -122,7 +122,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="api\BaseApi.cs" />
@@ -132,9 +134,12 @@
     <Compile Include="api\ValuesController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\GitController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DbSession.cs" />
     <Compile Include="Filters\AddChallengeOnUnauthorizedResult.cs" />
     <Compile Include="Filters\AuthenticationFailureResult.cs" />
+    <Compile Include="Filters\GitAuthorizeAttribute.cs" />
     <Compile Include="Filters\HttpAuthenticationChallengeContextExtensions.cs" />
     <Compile Include="Filters\JwtAuthenticationAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -157,7 +162,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Git\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Git\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BiGitServer.Data\BiGitServer.Data.csproj">

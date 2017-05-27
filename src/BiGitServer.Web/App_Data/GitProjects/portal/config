@@ -1,6 +1,12 @@
 [core]
 	bare = true
-	repositoryformatversion = 0
 	filemode = false
 	symlinks = false
 	ignorecase = true
+	logallrefupdates = true
+[core]
+	repositoryformatversion = 0
+[remote "origin"]
+	url = localhost:63094/portal.git
+[remote "origin"]
+	fetch = +refs/*:refs/*

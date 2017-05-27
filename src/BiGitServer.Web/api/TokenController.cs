@@ -36,7 +36,14 @@ namespace BiGitServer.Web.api
 
             throw new HttpResponseException(HttpStatusCode.Unauthorized);
         }
-
+        //[AllowAnonymous]
+        //[HttpGet]
+        
+        //[Route("~/{project}.git")]
+        //public string Repo(string project)
+        //{
+        //    return project;
+        //}
         public bool CheckUser(string username, string password)
         {
             // should check in the database

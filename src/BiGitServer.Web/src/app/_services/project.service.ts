@@ -12,7 +12,7 @@ export class ProjectService extends BaseService {
         super();
     }
     getAll():Observable<Project[]>{
-        let ro=this.getRequestOpt();
+        let ro=super.getRequestOpt();
         return this.http.get('/api/project',ro).map((res:Response)=>res.json());
     }
     create(project:Project){

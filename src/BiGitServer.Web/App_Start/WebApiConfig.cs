@@ -13,11 +13,15 @@ namespace BiGitServer.Web
             config.Formatters.JsonFormatter.SupportedMediaTypes
                .Add(new MediaTypeHeaderValue("text/html"));
             // Web API configuration and services
-            config.Filters.Add(new AuthorizeAttribute());
+            //config.Filters.Add(new AuthorizeAttribute());
             // Web API routes
             config.MapHttpAttributeRoutes();
             // Home Index page have ng-app
-        
+            //config.Routes.MapHttpRoute(
+            //      name: "GitApi",
+            //      routeTemplate: "{project}.git",
+            //      defaults: new {controller="Token",action="Repo"  }
+            //  );
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

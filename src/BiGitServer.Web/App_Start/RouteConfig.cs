@@ -11,14 +11,19 @@ namespace BiGitServer.Web
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
             // dist / index.html
-        
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.MapRoute("GitRepo",
+                        "{project}.git/{*verb}",
+                        new { controller = "Git", action = "Repo" });
+
+          //  routes.MapRoute(
+          //name: "Default",
+          //url: "{controller}/{action}/{id}",
+          //defaults: new { controller = "Home", action = "FakeData", id = UrlParameter.Optional }      );
+
+           
         }
     }
 }
