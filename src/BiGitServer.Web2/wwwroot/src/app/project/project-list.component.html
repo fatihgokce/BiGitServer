@@ -1,0 +1,21 @@
+<div class="box-btns">   
+    <a [routerLink]="['/create-project',{ foo: 'foo' }]" class="btn btn-default green clearfix" style="float:right">Create Project</a>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>            
+            <th>Name</th>
+            <th>Description</th>   
+            <th>Link</th>     
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let project of projects">            
+            <td>{{project.name}}</td>
+            <td>{{project.description}}</td> 
+            <td>
+            <a [routerLink]="['/create-project',{name:project.Name}]" class="btn btn-default green clearfix">{{project.name}}</a>
+            </td>       
+        </tr>
+    </tbody>
+</table>

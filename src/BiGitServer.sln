@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiGitServer.Web", "BiGitServer.Web\BiGitServer.Web.csproj", "{831B0A31-8B0E-4845-8BD3-590A60ADF606}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiGitServer.Data", "BiGitServer.Data\BiGitServer.Data.csproj", "{4E177160-F4EA-433B-A5C5-6C48DBBFD4C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiGitServer.Web2", "BiGitServer.Web2\BiGitServer.Web2.csproj", "{2E7DF913-9441-4821-B215-B00CB9997662}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiGitServer.Data2", "BiGitServer.Data2\BiGitServer.Data2.csproj", "{E14CCDBB-2C5F-4117-9CE8-F3E747323250}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{4E177160-F4EA-433B-A5C5-6C48DBBFD4C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E177160-F4EA-433B-A5C5-6C48DBBFD4C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E177160-F4EA-433B-A5C5-6C48DBBFD4C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E7DF913-9441-4821-B215-B00CB9997662}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E7DF913-9441-4821-B215-B00CB9997662}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E7DF913-9441-4821-B215-B00CB9997662}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E7DF913-9441-4821-B215-B00CB9997662}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E14CCDBB-2C5F-4117-9CE8-F3E747323250}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E14CCDBB-2C5F-4117-9CE8-F3E747323250}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E14CCDBB-2C5F-4117-9CE8-F3E747323250}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E14CCDBB-2C5F-4117-9CE8-F3E747323250}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

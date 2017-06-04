@@ -1,0 +1,12 @@
+[core]
+	bare = true
+	filemode = false
+	symlinks = false
+	ignorecase = true
+	logallrefupdates = true
+[core]
+	repositoryformatversion = 0
+[remote "origin"]
+	url = https://github.com/fatihgokce/jsReadXml.git
+[remote "origin"]
+	fetch = +refs/*:refs/*

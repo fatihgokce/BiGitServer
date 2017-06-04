@@ -12,7 +12,7 @@ using System.Web.Hosting;
 
 namespace BiGitServer.Web.api
 {
-    [JwtAuthentication]
+    [JwtAuthentication(Roles ="User")]
     public class ProjectController : BaseApi
     {
         // GET api/<controller>

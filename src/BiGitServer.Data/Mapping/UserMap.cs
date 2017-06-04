@@ -16,6 +16,7 @@ namespace BiGitServer.Data.Mapping
             Map(t => t.Surname).Not.Nullable().Length(255);
             Map(t => t.Password).Not.Nullable().Length(255);
             Map(t => t.Email).Not.Nullable().Length(255);
+            Map(t => t.Role).Nullable().Length(100);
         }
     
     }

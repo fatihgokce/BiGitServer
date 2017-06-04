@@ -12,8 +12,8 @@ namespace BiGitServer.Web
     public static class JwtManager
     {
         public const string Secret = "856FECBA3B06519C8DDDBC80BB080553"; // your symetric
-
-        public static string GenerateToken(string username, int expireMinutes = 90)
+        public const int ExpireMinutes = 2;
+        public static string GenerateToken(string username, int expireMinutes = ExpireMinutes)
         {
             var symmetricKey = Convert.FromBase64String(Secret);
             var tokenHandler = new JwtSecurityTokenHandler();

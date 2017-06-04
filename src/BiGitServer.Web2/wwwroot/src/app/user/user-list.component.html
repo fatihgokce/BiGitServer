@@ -1,0 +1,19 @@
+<div class="box-btns">   
+    <a [routerLink]="['/create-user']" class="btn btn-default green clearfix" style="float:right">Create User</a>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>            
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">            
+            <td>{{user.name}}</td>
+            <td>{{user.surname}}</td>
+            <td>{{user.email}}</td>
+        </tr>
+    </tbody>
+</table>

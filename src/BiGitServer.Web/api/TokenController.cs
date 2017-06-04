@@ -14,22 +14,35 @@ namespace BiGitServer.Web.api
         public string firstName { get; set; }
         public string lastName { get; set; }
         public string token { get; set; }
+        public double expireTime { get; set; }
+        public string email { get; set; }
     }
     public class TokenController : ApiController
     {
+        private double MilliTimeStamp(DateTime theDate)
+        {
+            DateTime d1 = new DateTime(1970, 1, 1);
+            DateTime d2 = theDate.ToUniversalTime();
+            TimeSpan ts = new TimeSpan(d2.Ticks - d1.Ticks);
+
+            return ts.TotalMilliseconds;
+        }
         // GET api/<controller>
         [AllowAnonymous]
         public UserModel Get(string username, string password)
         {
             if (CheckUser(username, password))
             {
+                double expireTime = MilliTimeStamp( DateTime.Now.AddMinutes(JwtManager.ExpireMinutes));
                 return new UserModel
                 {
                     id = 1,
                     firstName = "fatih",
                     lastName = "gökçe",
                     token = JwtManager.GenerateToken(username),
-                    username = username
+                    username = username,
+                    email=username,
+                    expireTime= expireTime
                 };
                    
             }

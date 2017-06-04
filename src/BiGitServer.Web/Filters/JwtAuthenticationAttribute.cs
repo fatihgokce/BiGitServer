@@ -5,12 +5,14 @@ using System.Security.Principal;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http.Filters;
-
+using NHibernate;
+using BiGitServer.Data.Models;
 namespace BiGitServer.Web.Filters
 {
     public class JwtAuthenticationAttribute : Attribute, IAuthenticationFilter
     {
         public string Realm { get; set; }
+        public string Roles { get; set; }
         public bool AllowMultiple => false;
 
         public async Task AuthenticateAsync(HttpAuthenticationContext context, CancellationToken cancellationToken)
@@ -34,7 +36,32 @@ namespace BiGitServer.Web.Filters
                 context.ErrorResult = new AuthenticationFailureResult("Invalid token", request);
 
             else
-                context.Principal = principal;
+            {
+                if (!string.IsNullOrEmpty(Roles))
+                {
+                    string[] roles = Roles.Split(',');
+                    bool isInRole = false;
+                    foreach(var role in roles)
+                    {
+                        if (principal.IsInRole(role))
+                        {
+                            context.Principal = principal;
+                            isInRole = true;
+                        }
+                    }
+                    if (!isInRole)
+                    {
+                        context.ErrorResult = new AuthenticationFailureResult("this role no permission.", request);
+                    }
+
+                }
+                else
+                {
+                    context.Principal = principal;
+                }
+          
+            }
+                
         }
 
 
@@ -70,9 +97,11 @@ namespace BiGitServer.Web.Filters
             if (ValidateToken(token, out username))
             {
                 // based on username to get more information from database in order to build local identity
+                var dbUser = DbSession.Instance.GetSession.QueryOver<User>().Where(x => x.Email == username).SingleOrDefault();
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name, username)
+                    new Claim(ClaimTypes.Name, username),
+                    new Claim(ClaimTypes.Role,dbUser.Role)
                     // Add more claims if needed: Roles, ...
                 };
 

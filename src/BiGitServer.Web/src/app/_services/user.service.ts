@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 export class UserService {
     constructor(private http: Http) { }
     private getRequestOpt():RequestOptions{
-        let currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+        let currentUser = JSON.parse(localStorage.getItem('currentUser'));
         let headers = new Headers({ 'Authorization': 'Bearer ' + currentUser.token,'Content-Type': 'application/json' });
         let ro = new RequestOptions({headers:headers});
         
@@ -24,7 +24,7 @@ export class UserService {
         let params: URLSearchParams = new URLSearchParams();
         params.set('columnName', columnName);    
         params.set('value', value);    
-        let currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+        let currentUser = JSON.parse(localStorage.getItem('currentUser'));
         let headers = new Headers({ 'Authorization': 'Bearer ' + currentUser.token });
         let ro = new RequestOptions({headers:headers});
         //requestOptions.search = params;
