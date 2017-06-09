@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import {BaseService} from './base.service';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/throw';
 import {Project} from '../_models/project';
 @Injectable()
 export class ProjectService extends BaseService {
@@ -18,11 +19,9 @@ export class ProjectService extends BaseService {
     create(project:Project){
         let requestOption=super.getRequestOpt();
         return this.http.post('/api/project',project,requestOption)
-               .map((response:Response)=>{
-                   console.log(response);
-                   response.json();
-                }
-               );
+               .map(this.extractData)
+               .catch(this.handleError);
     }
+ 
 
 }

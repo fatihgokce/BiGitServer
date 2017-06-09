@@ -1,6 +1,6 @@
 ﻿{
   "**": {
-    "target": "http://localhost:49956",
+    "target": "http://localhost:5000",
     "secure": false,
     "logLevel": "debug"
 
