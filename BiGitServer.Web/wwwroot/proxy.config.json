@@ -1,0 +1,10 @@
+﻿{
+  "**": {
+    "target": "http://localhost:49956",
+    "secure": false,
+    "logLevel": "debug"
+
+
+  },
+  "headers": { "Access-Control-Allow-Origin": "*"}
+}

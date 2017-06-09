@@ -1,0 +1,14 @@
+﻿@using BiGitServer.Data;
+@{
+    ViewData["Title"] = "About";
+    Role role=ViewData["role"] as Role;
+}
+<h2>@ViewData["Title"].</h2>
+<h3>@ViewData["Message"]</h3>
+
+<p>Use this area to provide additional information.</p>
+<p>@role.Users.Count</p>
+@foreach(var user in role.Users){
+    <p>@user.Name</p>
+    <p>@user.Id</p>
+}
